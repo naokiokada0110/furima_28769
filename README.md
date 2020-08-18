@@ -61,7 +61,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one_attached
 
-## purchase テーブル
+## purchases テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -74,11 +74,11 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-## shipping_address テーブル
+## shipping_addresses テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| post_cord     | integer    | null: false                    |
+| post_cord     | string    | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | block         | string     | null: false                    |
