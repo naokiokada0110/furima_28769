@@ -25,14 +25,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column       | Type     | Options     |
-| ------------ | -------- | ----------- |
-| nickname     | string   | null: false |
-| mail-address | string   | null: false |
-| password     | string   | null: false |
-| name-kanji   | string   | null: false |
-| name-kana    | string   | null: false |
-| birthday     | datetime | null: false |
+| Column          | Type   | Options     |
+| --------------- | -------| ----------- |
+| nickname        | string | null: false |
+| mail            | string | null: false |
+| password        | string | null: false |
+| last_name       | string | null: false |
+| first_name      | string | null: false |
+| last_name_kana  | string | null: false |
+| first_name_kana | string | null: false |
+| birthday        | date   | null: false |
 
 ### Association
 
@@ -41,18 +43,18 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column              | Type       | Options                        |
-| ------------------- | ---------- | ------------------------------ |
-| product-image       | string     | null: false                    |
-| product-name        | string     | null: false                    |
-| product-description | text       | null: false                    |
-| category            | string     | null: false                    |
-| product-status      | string     | null: false                    |
-| delivery-charge     | string     | null: false                    |
-| shipping-area       | string     | null: false                    |
-| shipping-day        | string     | null: false                    |
-| price               | string     | null: false                    |
-| user                | references | null: false, foreign_key: true |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| image           | string     | null: false                    |
+| name            | string     | null: false                    |
+| description     | text       | null: false                    |
+| category        | string     | null: false                    |
+| status          | string     | null: false                    |
+| delivery_charge | string     | null: false                    |
+| shipping_area   | string     | null: false                    |
+| shipping_day    | string     | null: false                    |
+| price           | integer    | null: false                    |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -75,10 +77,15 @@ Things you may want to cover:
 
 ## shipping-address テーブル
 
-| Column   | Type      | Options                        |
-| -------- | --------- | ------------------------------ |
-| address  | string    | null: false                    |
-| purchase | reference | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| post_cord     | integer    | null: false                    |
+| prefecture_id | string     | null: false                    |
+| city          | string     | null: false                    |
+| block         | string     | null: false                    |
+| building      | string     | null: false                    |
+| phone_number  | integer    | null: false                    |
+| purchase      | references | null: false, foreign_key: true |
 
 ### Association
 
