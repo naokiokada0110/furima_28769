@@ -45,14 +45,13 @@ Things you may want to cover:
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| image           | string     | null: false                    |
 | name            | string     | null: false                    |
 | description     | text       | null: false                    |
-| category        | string     | null: false                    |
-| status          | string     | null: false                    |
-| delivery_charge | string     | null: false                    |
-| shipping_area   | string     | null: false                    |
-| shipping_day    | string     | null: false                    |
+| category        | integer    | null: false                    |
+| status          | integer    | null: false                    |
+| delivery_charge | integer    | null: false                    |
+| shipping_area   | integer    | null: false                    |
+| shipping_day    | integer    | null: false                    |
 | price           | integer    | null: false                    |
 | user            | references | null: false, foreign_key: true |
 
@@ -71,20 +70,20 @@ Things you may want to cover:
 
 ### Association
 
-- has_one : shipping-address
+- has_one : shipping_address
 - belongs_to :user
 - belongs_to :item
 
-## shipping-address テーブル
+## shipping_address テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | post_cord     | integer    | null: false                    |
-| prefecture_id | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
-| block         | string     | null: false                    |
+| block         | string     |                                |
 | building      | string     | null: false                    |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
 | purchase      | references | null: false, foreign_key: true |
 
 ### Association
