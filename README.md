@@ -81,8 +81,8 @@ Things you may want to cover:
 | post_cord     | integer    | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
-| block         | string     |                                |
-| building      | string     | null: false                    |
+| block         | string     | null: false                    |
+| building      | string     |                                |
 | phone_number  | string     | null: false                    |
 | purchase      | references | null: false, foreign_key: true |
 
