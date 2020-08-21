@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
     create_table :products do |t|
       t.string :name,             null: false
       t.text :discription,        null: false
-      t.integer :categpry,        null: false
+      t.integer :category,        null: false
       t.integer :status,          null: false
       t.integer :delivery_chaege, null: false
       t.integer :shipping_area,   null: false
