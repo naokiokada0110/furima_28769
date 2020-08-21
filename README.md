@@ -38,10 +38,10 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :items
+- has_many :products
 - has_many :purchases
 
-## items テーブル
+## products テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -63,16 +63,16 @@ Things you may want to cover:
 
 ## purchases テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| product   | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_one : shipping_address
 - belongs_to :user
-- belongs_to :item
+- belongs_to :product
 
 ## shipping_addresses テーブル
 

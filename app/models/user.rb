@@ -4,14 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :items
+  has_many :products
   has_many :purchases
 
   PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z{6,}/.freeze
   EMAIL_REGEX = /@./.freeze
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
   NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
-
+  
   with_options presence: true do
     validates :nickname, :birthday
     validates :email, format: { with: EMAIL_REGEX, message: 'このメールアドレスは使用できません。' }
