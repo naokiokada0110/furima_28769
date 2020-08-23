@@ -12,7 +12,7 @@ class Product < ApplicationRecord
     validates :delivery_chaege
     validates :shipping_area
     validates :shipping_day
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message:"この金額は入力できません"}
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'この金額は入力できません' }
     validates :user
   end
 end

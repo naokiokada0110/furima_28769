@@ -11,7 +11,7 @@ class User < ApplicationRecord
   EMAIL_REGEX = /@./.freeze
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
   NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
-  
+
   with_options presence: true do
     validates :nickname, :birthday
     validates :email, format: { with: EMAIL_REGEX, message: 'このメールアドレスは使用できません。' }

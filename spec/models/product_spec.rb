@@ -13,7 +13,7 @@ describe Product do
         expect(@product).to be_valid
       end
       it '価格の幅が300円〜9,999,999円までであれば登録できる' do
-        @product.price = "10000"
+        @product.price = '10000'
         expect(@product).to be_valid
       end
     end
