@@ -10,4 +10,4 @@ function sellPrice() {
     saleProfit.innerText = price.value - price.value * 0.1
   });
 }
-window.addEventListener("load", sellPrice);
+window.addEventListener("turbolinks:load", sellPrice);
