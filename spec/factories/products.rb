@@ -8,5 +8,6 @@ FactoryBot.define do
     shipping_area   { '3' }
     shipping_day    { '1' }
     price           { '54000' }
+    association :user
   end
 end

@@ -3,8 +3,6 @@ describe Product do
   before do
     @product = FactoryBot.build(:product)
     @product.image = fixture_file_upload('public/images/test_image.jpeg')
-    @user = FactoryBot.create(:user)
-    @product.user = @user
   end
 
   describe '商品の新規登録' do
@@ -64,6 +62,17 @@ describe Product do
         @product.valid?
         expect(@product.errors.full_messages).to include("Price can't be blank")
       end
+      it '価格が300円未満であれば登録できない' do
+        @product.price = "290"
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Price この金額は入力できません")
+      end
+      it '価格が10,000,000円以上の場合登録できない' do
+        @product.price = "10000005"
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Price この金額は入力できません")
+      end
+
     end
   end
 end
