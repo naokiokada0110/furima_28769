@@ -63,16 +63,15 @@ describe Product do
         expect(@product.errors.full_messages).to include("Price can't be blank")
       end
       it '価格が300円未満であれば登録できない' do
-        @product.price = "290"
+        @product.price = '290'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Price この金額は入力できません")
+        expect(@product.errors.full_messages).to include('Price この金額は入力できません')
       end
       it '価格が10,000,000円以上の場合登録できない' do
-        @product.price = "10000005"
+        @product.price = '10000005'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Price この金額は入力できません")
+        expect(@product.errors.full_messages).to include('Price この金額は入力できません')
       end
-
     end
   end
 end
