@@ -23,9 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @product.user_id
-      redirect_to :index
-    end
+    redirect_to :index unless current_user.id == @product.user_id
   end
 
   def update
@@ -37,12 +35,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @product.user_id
-      @product.destroy
-    end
-    redirect_to  products_path
+    @product.destroy if current_user.id == @product.user_id
+    redirect_to products_path
   end
-  
+
   private
 
   def product_params
