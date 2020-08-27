@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_product, only: [:show, :edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @product = Product.includes(:purchase).order('created_at DESC')
@@ -29,14 +29,22 @@ class ProductsController < ApplicationController
   end
 
   def update
-    product = Product.find(params[:id])
-    if product.update(product_params)
+    if @product.update(product_params)
       redirect_to product_path
     else
       render :new
     end
   end
 
+  def destroy
+    if current_user.id == @product.user_id
+      @product.destroy
+      redirect_to products_path
+    else
+    render :show
+    end
+  end
+  
   private
 
   def product_params
