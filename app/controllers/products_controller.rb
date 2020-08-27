@@ -39,8 +39,9 @@ class ProductsController < ApplicationController
   def destroy
     if current_user.id == @product.user_id
       @product.destroy
+      redirect_to products_path
     else
-    render :index
+    render :show
     end
   end
   
