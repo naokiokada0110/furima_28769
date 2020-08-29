@@ -1,13 +1,13 @@
 FactoryBot.define do
   factory :product do
-    name            { 'AplleWatch' }
-    discription     { '最先端の商品です' }
-    category        { '7' }
-    status          { '3' }
-    delivery_chaege { '2' }
-    shipping_area   { '3' }
-    shipping_day    { '1' }
-    price           { '54000' }
+    name               { 'AplleWatch' }
+    discription        { '最先端の商品です' }
+    category_id        { '1' }
+    status_id          { '1' }
+    delivery_chaege_id { '1' }
+    shipping_area_id   { '1' }
+    shipping_day_id    { '1' }
+    price              { '54000' }
     association :user
   end
 end
