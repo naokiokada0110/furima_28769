@@ -1,5 +1,4 @@
 class PurchaseAddress
-  
   include ActiveModel::Model
   attr_accessor :user, :product, :post_cord, :prefecture_id, :city, :block, :building, :phone_number, :token
 
@@ -16,7 +15,7 @@ class PurchaseAddress
     validates :prefecture_id
     validates :city
     validates :block
-    validates :phone_number,  format: { with: PHONENUMBER_REGEX, message: 'この番号は登録できません' }
+    validates :phone_number, format: { with: PHONENUMBER_REGEX, message: 'この番号は登録できません' }
     validates :token
   end
 
@@ -24,5 +23,4 @@ class PurchaseAddress
     purchase = Purchase.create(user_id: user, product_id: product)
     ShippingAddress.create(post_cord: post_cord, prefecture_id: prefecture_id, city: city, block: block, phone_number: phone_number, purchase_id: purchase.id)
   end
-
 end

@@ -24,7 +24,7 @@ describe PurchaseAddress do
       it '郵便番号にハイフンが含まれた正しい形式でないと登録できない' do
         @purchaseaddress.post_cord = '1234567'
         @purchaseaddress.valid?
-        expect(@purchaseaddress.errors.full_messages).to include("Post cord ハイフンを使用してください")
+        expect(@purchaseaddress.errors.full_messages).to include('Post cord ハイフンを使用してください')
       end
       it '都道府県が空だと登録できな' do
         @purchaseaddress.prefecture_id = nil
@@ -32,7 +32,7 @@ describe PurchaseAddress do
         expect(@purchaseaddress.errors.full_messages).to include("Prefecture can't be blank")
       end
       it '市区町村が空だと登録できない' do
-        @purchaseaddress.city  = nil
+        @purchaseaddress.city = nil
         @purchaseaddress.valid?
         expect(@purchaseaddress.errors.full_messages).to include("City can't be blank")
       end
@@ -49,7 +49,7 @@ describe PurchaseAddress do
       it '電話番号にハイフンが含まれた形式では登録できない' do
         @purchaseaddress.phone_number = '090-1234-5678'
         @purchaseaddress.valid?
-        expect(@purchaseaddress.errors.full_messages).to include("Phone number この番号は登録できません")
+        expect(@purchaseaddress.errors.full_messages).to include('Phone number この番号は登録できません')
       end
     end
   end
